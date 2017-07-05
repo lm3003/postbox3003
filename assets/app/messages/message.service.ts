@@ -17,7 +17,7 @@ export class MessageService {
         var header = new Headers({'Content-Type':'application/json'});
         const body = JSON.stringify(message);
         const token = localStorage.getItem('token') ? '?token='+localStorage.getItem('token') : '';
-        return this.httpService.post('http://localhost:3000/message' + token, body, {headers: header})
+        return this.httpService.post('https://chatbox3003.herokuapp.com/message' + token, body, {headers: header})
             .map((response: Response) => {
                 const result = response.json();
                 const message = new Message(result.object.content,
@@ -36,7 +36,7 @@ export class MessageService {
     deleteMessage(message: Message) {
         this.messages.splice(this.messages.indexOf(message), 1);
         const token = localStorage.getItem('token') ? '?token='+localStorage.getItem('token') : '';
-        return this.httpService.delete('http://localhost:3000/message/' + message.messageId + token)
+        return this.httpService.delete('https://chatbox3003.herokuapp.com/message/' + message.messageId + token)
             .map((response: Response) => response.json())
             .catch( (error: Response) => {
                 this.errorService.handleError(error.json());
@@ -45,7 +45,7 @@ export class MessageService {
     }
 
     getMessages() {
-        return this.httpService.get('http://localhost:3000/message')
+        return this.httpService.get('https://chatbox3003.herokuapp.com/message')
             .map ((response: Response) => {
                 const messages = response.json().obj;
                 let savedMessages: Message[] = [];
@@ -69,7 +69,7 @@ export class MessageService {
         var header = new Headers({'Content-Type':'application/json'});
         const body = JSON.stringify(message);
         const token = localStorage.getItem('token') ? '?token='+localStorage.getItem('token') : '';
-        return this.httpService.patch('http://localhost:3000/message/' + message.messageId + token, body, {headers: header})
+        return this.httpService.patch('https://chatbox3003.herokuapp.com/message/' + message.messageId + token, body, {headers: header})
             .map((response: Response) => response.json())
             .catch( (error: Response) => {
                 this.errorService.handleError(error.json());

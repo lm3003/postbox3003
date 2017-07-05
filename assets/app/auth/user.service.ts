@@ -15,7 +15,7 @@ export class UserService{
     signupUser(user: User) {
         const body = JSON.stringify(user);
         const header = new Headers({'Content-Type':'application/json'});
-        return this.httpService.post('http://localhost:3000/user', body, {headers: header})
+        return this.httpService.post('https://chatbox3003.herokuapp.com/user', body, {headers: header})
             .map((response: Response) => response.json())
             .catch( (error: Response) => {
                 this.errorService.handleError(error.json());
@@ -27,7 +27,7 @@ export class UserService{
     signinUser(user: User) {
         const body = JSON.stringify(user);
         const header = new Headers({'Content-Type': 'application/json'});
-        return this.httpService.post('http://localhost:3000/user/signin', body, {headers: header})
+        return this.httpService.post('https://chatbox3003.herokuapp.com/user/signin', body, {headers: header})
             .map((response: Response) => response.json())
             .catch( (error: Response) => {
                 this.errorService.handleError(error.json());
