@@ -1,29 +1,28 @@
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
-
-import {MessagesComponent} from './messages.component';
+import {MessageComponent} from './message.component';
 import {MessageInputComponent} from './message-input.component';
 import {MessageListComponent} from './message-list.component';
-import {MessageComponent} from './message.component';
+import {MessagesComponent} from './messages.component';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 import {MessageService} from './message.service';
 
-
 @NgModule({
-    declarations : [
+    declarations: [
         MessageComponent,
-        MessageListComponent,
         MessageInputComponent,
-        MessagesComponent,
+        MessageListComponent,
+        MessagesComponent
     ],
     imports: [
-        CommonModule,
-        FormsModule
+        FormsModule,
+        CommonModule
     ],
     providers: [
         MessageService
     ]
+
 })
-export class MessageModule{
+export class MessageModule {
 
 }

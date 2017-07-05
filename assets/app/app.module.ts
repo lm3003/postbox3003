@@ -10,7 +10,6 @@ import {UserService} from './auth/user.service';
 import {ErrorComponent} from './errors/error.component';
 import {ErrorService} from './errors/error.service';
 import {MessageModule} from './messages/message.module';
-import {AuthModule} from './auth/auth.module';
 
 @NgModule({
     declarations: [
