@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //connect to mongoDB
-mongoose.connect('test3003:3003@ds149412.mlab.com:49412/angular2deployment');
+mongoose.connect('mongodb://test3003:3003@ds149412.mlab.com:49412/angular2deployment');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
